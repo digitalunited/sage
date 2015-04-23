@@ -1,0 +1,67 @@
+.component-relatedlinksandfiles {
+    .related {
+        background-color: @gray-lighter;
+        font-family: @font-family-regular;
+
+        .heading {
+            font-family: @font-family-bold;
+            color: @brand-primary;
+        }
+
+        i {
+            font-size: 24px;
+            color: @brand-primary;
+            margin-right: 10px;
+        }
+
+        hr {
+            margin: 0;
+            border-color: @gray-light;
+
+        }
+
+        .head {
+            padding: 20px 30px;
+        }
+
+        .related-linksandfiles {
+            padding: 30px;
+
+            a {
+                display: block;
+                width: auto;
+                margin-bottom: 20px;
+                color: @brand-primary-light;
+
+                &:hover {
+                    color: darken(@brand-primary-light, 10%);
+                }
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        &.related-files {
+            a {
+                margin-bottom: 5px;
+
+                &:before {
+                    font-family: "icomoon";
+                    content: "\e604";
+                    font-size: 24px;
+                    margin-right: 10px;
+                    position: relative;
+                    top: 5px;
+                }
+
+                .file-size {
+                    font-family: @font-family-regular;
+                    font-size: 14px;
+                    color: @gray-dark;
+                }
+            }
+        }
+    }
+}

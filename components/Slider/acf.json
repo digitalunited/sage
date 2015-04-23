@@ -1,0 +1,128 @@
+[
+  {
+    "key": "group_54da29545515f",
+    "title": "Slider",
+    "fields": [
+      {
+        "key": "field_54da2975948ae",
+        "label": "Url",
+        "name": "url",
+        "prefix": "",
+        "type": "url",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "",
+        "placeholder": ""
+      },
+      {
+        "key": "field_54da2a88948af",
+        "label": "Text",
+        "name": "text",
+        "prefix": "",
+        "type": "textarea",
+        "instructions": "",
+        "required": 1,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "",
+        "placeholder": "",
+        "maxlength": "",
+        "rows": "",
+        "new_lines": "br",
+        "readonly": 0,
+        "disabled": 0
+      },
+      {
+        "key": "field_54da2b63603fc",
+        "label": "Bild",
+        "name": "image",
+        "prefix": "",
+        "type": "image",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "return_format": "url",
+        "preview_size": "thumbnail",
+        "library": "all"
+      },
+      {
+        "key": "field_54da2bd7603fd",
+        "label": "Bild f\u00f6r bakgrund",
+        "name": "bg_image_href",
+        "prefix": "",
+        "type": "image",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "return_format": "url",
+        "preview_size": "thumbnail",
+        "library": "all"
+      },
+      {
+        "key": "field_54dc6ce3cf79d",
+        "label": "Bakgrundsf\u00e4rg",
+        "name": "background_color",
+        "prefix": "",
+        "type": "select",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "choices": {
+          "none": "Ingen",
+          "red": "R\u00f6d",
+          "light-blue": "Bl\u00e5"
+        },
+        "default_value": {
+          "none": "none"
+        },
+        "allow_null": 0,
+        "multiple": 0,
+        "ui": 0,
+        "ajax": 0,
+        "placeholder": "",
+        "disabled": 0,
+        "readonly": 0
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "post_type",
+          "operator": "==",
+          "value": "slider"
+        }
+      ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": ""
+  }
+]

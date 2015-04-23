@@ -1,0 +1,6 @@
+{
+  "bower": {
+    "bootstrap-carousel": "3.3.1",
+    "bootstrap-carousel-page-merger": "git@github.com:SocialbitGmbH/BootstrapCarouselPageMerger.git"
+  }
+}

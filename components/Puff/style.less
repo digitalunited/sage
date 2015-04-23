@@ -1,0 +1,78 @@
+.component-puff {
+    &.image_aside {
+        .clearfix();
+        .heading {
+            color: @brand-primary-light;
+            font-family: @font-family-light;
+            font-size: @font-size-base * 1.2;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .content {
+            overflow: hidden;
+        }
+    }
+
+    &.image_under {
+        background: @gray-lighter;
+        border-radius: 5px;
+        overflow: hidden;
+        margin-bottom: @margin;
+        .heading, .text {
+            padding: 25px;
+        }
+        .heading {
+            display: block;
+            color: @brand-primary-light;
+            font-size: 20px;
+        }
+
+        .icon-arrow-right-bold {
+            position: absolute;
+            right: 30px;
+            &:before {
+                font-size: 16px;
+            }
+        }
+
+        .component-image {
+            margin-bottom: 0;
+        }
+
+        .image-and-text {
+            position: relative;
+            margin: -5px;
+            max-height: 200px;
+        }
+        img {
+            min-width: 100%;
+        }
+        .text {
+            position: absolute;
+            color: white;
+            top: 0;
+
+            @media (max-width: @screen-sm-max) {
+                padding-top: 10px;
+            }
+        }
+    }
+
+    &.standard {
+        h4 {
+            font-family: @font-family-regular;
+            font-size: 24px;
+            margin-bottom: 25px;
+        }
+
+        .component-image {
+            margin-bottom: 25px;
+        }
+
+        img {
+            border-radius: 4px;
+        }
+    }
+
+}

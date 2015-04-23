@@ -1,0 +1,442 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Sage\n"
+"POT-Creation-Date: 2015-04-23 12:27+0100\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: Care of Haus <support@careofhaus.se>\n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.7.5\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_x;_e\n"
+"X-Poedit-Basepath: ../\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: assets\n"
+"X-Poedit-SearchPathExcluded-1: node_modules\n"
+"X-Poedit-SearchPathExcluded-2: bower_components\n"
+
+#: 404.php:4
+msgid "Sorry, but the page you were trying to view does not exist."
+msgstr "Beklagar, sidan du försökte besöka existerar inte."
+
+#: base.php:13
+msgid ""
+"You are using an <strong>outdated</strong> browser. Please <a href=\"http://"
+"browsehappy.com/\">upgrade your browser</a> to improve your experience."
+msgstr ""
+"Du använder en <strong>utdaterad</strong> webbläsare. Vänligen <a href="
+"\"http://browsehappy.com/\">uppgradera</a> för att förbättra din upplevelse."
+
+#: components/Button/component.php:13
+msgid "component.name.button"
+msgstr "Knapp"
+
+#: components/Button/component.php:18
+msgid "admin.text.button.text"
+msgstr "Text"
+
+#: components/Button/component.php:27 components/Image/component.php:20
+#: components/Puff/component.php:42
+msgid "admin.text.link"
+msgstr "Länk"
+
+#: components/Button/component.php:30 components/Image/component.php:23
+msgid "admin.text.field.may.be.blank"
+msgstr "Fältet får lämnas blankt"
+
+#: components/Button/component.php:35 components/Image/component.php:38
+#: components/Puff/component.php:17 components/Tabs/component.php:33
+#: components/Text/component.php:64
+msgid "admin.text.theme"
+msgstr "Tema"
+
+#: components/Button/component.php:39 components/Image/component.php:42
+msgid "admin.text.standard"
+msgstr "Standard"
+
+#: components/Button/component.php:40
+msgid "admin.text.banner"
+msgstr "Banner"
+
+#: components/Button/component.php:47
+msgid "admin.text.position"
+msgstr "Position"
+
+#: components/Button/component.php:51 components/Puff/component.php:56
+msgid "admin.text.left"
+msgstr "Vänster"
+
+#: components/Button/component.php:52
+msgid "admin.text.center"
+msgstr "Centrerad"
+
+#: components/Button/component.php:53 components/Puff/component.php:55
+msgid "admin.text.right"
+msgstr "Höger"
+
+#: components/ContactForm/component.php:13
+msgid "component.name.contact.form"
+msgstr "Kontaktformulär"
+
+#: components/ContactForm/component.php:19 components/Puff/component.php:30
+#: components/RelatedLinksAndFiles/component.php:19
+#: components/Testimonials/component.php:19 components/Text/component.php:48
+msgid "admin.text.headline"
+msgstr "Rubrik"
+
+#: components/ContactForm/component.php:27
+#: components/RelatedLinksAndFiles/component.php:26
+msgid "admin.text.icon"
+msgstr "Ikon"
+
+#: components/ContactForm/component.php:30
+#: components/RelatedLinksAndFiles/component.php:29
+msgid "admin.text.icon.related.files"
+msgstr "Relaterade filer"
+
+#: components/ContactForm/component.php:31
+#: components/RelatedLinksAndFiles/component.php:30
+msgid "admin.text.icon.related.links"
+msgstr "Relaterade länkar"
+
+#: components/Footer/view.php:7
+msgid "social.media.links.headline.footer"
+msgstr "Social media"
+
+#: components/Footer/view.php:15
+msgid "find.us.on.facebook"
+msgstr "Facebook"
+
+#: components/Footer/view.php:21
+msgid "find.us.on.linked.in"
+msgstr "LinkedIn"
+
+#: components/Footer/view.php:27
+msgid "find.us.on.mynewsdesk"
+msgstr "MyNewsDesk"
+
+#: components/Header/view.php:7
+msgid "Toggle navigation"
+msgstr ""
+
+#: components/Iframe/component.php:13
+msgid "component.name.iframe"
+msgstr "Iframe"
+
+#: components/Iframe/component.php:20 components/LogoSlider/cpt.php:40
+msgid "admin.text.url"
+msgstr "Url"
+
+#: components/Iframe/component.php:28
+msgid "admin.text.height.px"
+msgstr "Höjd i pixlar"
+
+#: components/Iframe/view.php:2
+msgid "Your browser do not support iframes"
+msgstr "Din webbläsare stödjer inte iframes"
+
+#: components/Image/component.php:13
+msgid "component.name.image"
+msgstr "Bild"
+
+#: components/Image/component.php:29 components/Puff/component.php:47
+msgid "admin.text.image"
+msgstr "Bild"
+
+#: components/Image/component.php:43
+msgid "admin.text.theme.no.margin"
+msgstr "Inga marginaler"
+
+#: components/LogoSlider/component.php:13
+msgid "component.name.logoslider"
+msgstr "LogoSlider"
+
+#: components/LogoSlider/cpt.php:9
+msgid "post.type.name.logo.slides"
+msgstr "LogoSlides"
+
+#: components/LogoSlider/cpt.php:10
+msgid "post.type.name.logo.slides.singular"
+msgstr "Logotyp"
+
+#: components/LogoSlider/cpt.php:39
+msgid "admin.text.title"
+msgstr "Titel"
+
+#: components/LogoSlider/cpt.php:41
+msgid "admin.text.order"
+msgstr "Ordning"
+
+#: components/LogoSlider/cpt.php:42
+msgid "admin.text.logo"
+msgstr "Logo"
+
+#: components/LogoSlider/cpt.php:43
+msgid "admin.text.date"
+msgstr "Datum"
+
+#: components/LogoSlider/view.php:32 components/Slider/view.php:33
+msgid "slider.prev"
+msgstr "Föregående"
+
+#: components/LogoSlider/view.php:36 components/Slider/view.php:37
+msgid "slider.next"
+msgstr "Nästa"
+
+#: components/Post/list.view.php:19
+msgid "post.listview.button.readmore"
+msgstr "Läs mer"
+
+#: components/Post/single.view.php:13
+msgid "post.single.button.to.archive.link"
+msgstr "Till arkivet"
+
+#: components/PostList/component.php:34
+msgid "post.list.next.page.button"
+msgstr "Nästa sida"
+
+#: components/PostList/component.php:78
+msgid "post.list.prev.page.button"
+msgstr "Föregående sida"
+
+#: components/PostList/component.php:88
+msgid "post.list.no.posts.message"
+msgstr "Inga poster"
+
+#: components/Puff/component.php:13
+msgid "component.name.puff"
+msgstr "Puff"
+
+#: components/Puff/component.php:20
+msgid "component.image.theme.standard"
+msgstr "Standard"
+
+#: components/Puff/component.php:21
+msgid "component.image.theme.image.aside"
+msgstr "Bild på sidan"
+
+#: components/Puff/component.php:22
+msgid "component.image.theme.image.below"
+msgstr "Bild under"
+
+#: components/Puff/component.php:23
+msgid "component.image.theme.transparent"
+msgstr "Transparent"
+
+#: components/Puff/component.php:36
+msgid "admin.text.text"
+msgstr "Text"
+
+#: components/Puff/component.php:52
+msgid "admin.text.image.position"
+msgstr "Bildposition"
+
+#: components/Puff/component.php:66 components/Row/component.php:59
+msgid "admin.text.background.color"
+msgstr "Bakgrundsfärg"
+
+#: components/Puff/component.php:69
+msgid "admin.text.none"
+msgstr "Ingen"
+
+#: components/Puff/component.php:70
+msgid "color.light.gray"
+msgstr "Ljusgrå"
+
+#: components/RelatedLinksAndFiles/component.php:13
+msgid "component.name.related.links.and.files"
+msgstr "Relaterade länkar och filer"
+
+#: components/Row/component.php:50
+msgid "component.name.row"
+msgstr "Rad"
+
+#: components/Row/component.php:54
+msgid "admin.text.background.image"
+msgstr "Bakgrundsbild"
+
+#: components/Row/component.php:62
+msgid "color.white"
+msgstr "Vit"
+
+#: components/Row/component.php:63
+msgid "color.dark.blue"
+msgstr "Mörkblå"
+
+#: components/Row/component.php:64
+msgid "color.blue"
+msgstr "Blå"
+
+#: components/Row/component.php:65
+msgid "color.gray"
+msgstr "Grå"
+
+#: components/Row/component.php:71
+msgid "admin.text.go.to.next.section.button"
+msgstr "Gå till nästa sektion"
+
+#: components/Row/component.php:73
+msgid "admin.text.show.button"
+msgstr "Visa knapp"
+
+#: components/Row/component.php:78
+msgid "admin.text.section.type"
+msgstr "Sektionstyp"
+
+#: components/Row/component.php:81
+msgid "admin.text.section.type.container"
+msgstr ""
+
+#: components/Row/component.php:82
+msgid "admin.text.section.type.container.fluid"
+msgstr ""
+
+#: components/SearchResult/component.php:20
+msgid "sarch.result.term.to.short"
+msgstr "Sökordet är för kort.  Testa en längre sökning"
+
+#: components/SearchResult/component.php:22
+msgid "sarch.result.no.hits.message"
+msgstr "Inga träffar"
+
+#: components/SearchResult/view.php:8
+msgid "search.result.submit.button"
+msgstr "Sök"
+
+#: components/Slider/component.php:13
+msgid "component.name.slider"
+msgstr "Slider"
+
+#: components/Slider/cpt.php:5
+msgid "post.type.name.slider"
+msgstr "Slider"
+
+#: components/Slider/cpt.php:6
+msgid "post.type.name.slider.singular"
+msgstr "Slider"
+
+#: components/Tabs/component.php:29
+msgid "component.name.tabs"
+msgstr "Tab-yta"
+
+#: components/Tabs/component.php:36
+msgid "admin.text.theme.light"
+msgstr "Ljus"
+
+#: components/Tabs/component.php:37
+msgid "admin.text.theme.dark"
+msgstr "Mörk"
+
+#: components/Testimonials/component.php:13
+msgid "component.name.testimonials"
+msgstr "Case"
+
+#: components/Testimonials/cpt.php:6
+msgid "post.type.testimonials.label"
+msgstr "Case"
+
+#: components/Testimonials/cpt.php:7
+msgid "post.type.testimonial.label.singular"
+msgstr "Case"
+
+#: components/Text/component.php:42
+msgid "component.name.text"
+msgstr "Text"
+
+#: components/Text/component.php:57
+msgid "admin.text.content"
+msgstr "Innehåll"
+
+#: components/Text/component.php:67
+msgid "component.button.theme.standard"
+msgstr "Standard"
+
+#: components/Text/component.php:68
+msgid "component.button.theme.center.light"
+msgstr "Centrerad - Ljus"
+
+#: components/Text/component.php:69
+msgid "component.button.theme.center.dark"
+msgstr "Centrerad - Mörk"
+
+#: functions.php:27
+#, php-format
+msgid "Error locating %s for inclusion"
+msgstr ""
+
+#: index.php:5
+msgid "Sorry, no results were found."
+msgstr ""
+
+#: lib/extras.php:31
+msgid "Continued"
+msgstr ""
+
+#: lib/init.php:22
+msgid "Primary Navigation"
+msgstr ""
+
+#: lib/init.php:49
+msgid "Primary"
+msgstr ""
+
+#: lib/init.php:58
+msgid "Footer"
+msgstr ""
+
+#: lib/titles.php:13
+msgid "Latest Posts"
+msgstr ""
+
+#: lib/titles.php:18
+#, php-format
+msgid "Search Results for %s"
+msgstr ""
+
+#: lib/titles.php:20
+msgid "Not Found"
+msgstr ""
+
+#: templates/comments.php:19
+msgid "&larr; Older comments"
+msgstr ""
+
+#: templates/comments.php:22
+msgid "Newer comments &rarr;"
+msgstr ""
+
+#: templates/comments.php:31
+msgid "Comments are closed."
+msgstr ""
+
+#: templates/content-page.php:2 templates/content-single.php:11
+msgid "Pages:"
+msgstr ""
+
+#: templates/entry-meta.php:2
+msgid "By"
+msgstr ""
+
+#: templates/searchform.php:2
+msgid "Search for:"
+msgstr ""
+
+#: templates/searchform.php:4 templates/searchform.php:6
+msgid "Search"
+msgstr ""
+
+#: dist/scripts/jquery.js:3
+msgid "show"
+msgstr ""
+
+#: dist/scripts/jquery.js:3
+msgid "hide"
+msgstr ""
+
+#: dist/scripts/jquery.js:3
+msgid "toggle"
+msgstr ""

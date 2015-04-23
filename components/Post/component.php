@@ -1,0 +1,149 @@
+<?php
+namespace Component;
+
+class Post extends \DigitalUnited\Components\Component
+{
+    private $meta;
+
+    protected function getDefaultParams()
+    {
+        /**
+         * @todo the 'view' param should be updated to "theme" instead, would removes some logic from this file.
+         */
+        return [
+            'post' => false,
+            'view' => 'list',
+            'image' => '',
+        ];
+    }
+
+    protected function getViewFileName()
+    {
+        $viewFile = $this->param('view') . '.view.php';
+        return $viewFile;
+    }
+
+    protected function sanetizeDataForRendering($data)
+    {
+        $data['image'] = $this->getImage();
+        return $data;
+    }
+
+    public function getHeadline()
+    {
+        return $this->param('post')->post_title;
+    }
+
+    public function shouldDisplayDate()
+    {
+        return in_array($this->param('post')->post_type, [
+            'post',
+        ]);
+    }
+
+    public function getPostDate()
+    {
+        return get_the_date(get_option('date_format'), $this->param('post')->ID);
+    }
+
+    public function getExcerpt()
+    {
+        $post = $this->param('post');
+        if ($post->post_excerpt) {
+            $excerpt = trim($post->post_excerpt);
+        } else {
+            //Strip shortcodes and markup
+            $excerpt = preg_replace('/\[.*?\]/s', '', $post->post_content);
+            $excerpt = strip_tags($excerpt);
+
+            // Truncate excessive words
+            $words = explode(' ', $excerpt);
+            $maxWords = 25;
+            if (count($words) > $maxWords) {
+                $words = array_slice($words, 0, $maxWords);
+                $words[] = '...';
+            }
+            $excerpt = implode(' ', $words);
+        }
+
+        return $excerpt;
+    }
+
+    public function getPostTypeArchiveLink()
+    {
+        return new \DigitalUnited\Components\Link([
+            'url' => get_permalink(get_option('page_for_posts')),
+            'title' => $this->getHeadline(),
+        ]);
+    }
+
+    public function getLink()
+    {
+        $post = $this->param('post');
+        return new \DigitalUnited\Components\Link([
+            'url' => get_permalink($post->ID),
+            'title' => $this->getHeadline(),
+        ]);
+    }
+
+    public function getImage()
+    {
+        $attachment_id = $this->getMeta('_thumbnail_id');
+        return $attachment_id
+            ? new Image(['image_id' => $attachment_id])
+            : '';
+    }
+
+    protected function getExtraWrapperDivClasses()
+    {
+        return [$this->param('view')];
+    }
+
+
+    public function getMeta($metaField, $fallback = '')
+    {
+        $this->populateMetaIfNotPoulated();
+        return isset($this->meta[$metaField]) ? $this->meta[$metaField] : $fallback;
+    }
+
+
+    private function populateMetaIfNotPoulated()
+    {
+        if ($this->meta) {
+            return true;
+        }
+
+        $cacheKey = $this->param('post')->ID;
+        $cacheGroup = 'component.post.meta';
+        $cache = wp_cache_get($cacheKey, $cacheGroup);
+        if ($cache) {
+            return $cache;
+        }
+
+        global $wpdb;
+        $query = $wpdb->prepare("
+            select meta_key, meta_value
+            from $wpdb->postmeta
+            where post_id = %d", $this->param('post')->ID);
+
+        $rows = $wpdb->get_results($query);
+        foreach ($rows as $row) {
+            $this->addMetaField($row);
+        }
+
+        wp_cache_set($cacheKey, $this->meta, $cacheGroup);
+    }
+
+    private function addMetaField($field)
+    {
+        // If the meta key is already set, we need to make an array or append existing array
+        // since we do not want to overrwrite
+        if (isset($this->meta[$field->meta_key])) {
+            $this->meta[$field->meta_key] = is_array($this->meta[$field->meta_key])
+                ? array_merge($this->meta[$field->meta_key], [$field->meta_value])
+                : [$this->meta[$field->meta_key], $field->meta_value];
+        } else {
+            $this->meta[$field->meta_key] = $field->meta_value;
+        }
+    }
+}

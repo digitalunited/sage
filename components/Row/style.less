@@ -1,0 +1,112 @@
+#row-0{
+    .container {
+        padding-top: 110px;
+        @media (max-width: @screen-sm-max){
+            padding-top: 80px;
+        }
+        .container {
+            padding-top: 0;
+        }
+    }
+}
+section {
+    position: relative;
+    &.full-width {
+        width: 100%;
+        background-position: center center !important;
+        background-size: cover !important;
+        background-color: @white;
+    }
+
+    .container-fluid.full-width {
+        .row {
+            padding-bottom: 0;
+            padding-top: 0;
+        }
+
+        .col-sm-12 {
+            padding-right: 0;
+            padding-left: 0;
+        }
+    }
+
+    &.section-blue {
+        background-color: @brand-primary-light;
+
+        .scroll-to-section {
+            background-color: @brand-primary-light;
+
+            i {
+                color: @white;
+            }
+        }
+    }
+
+    &.section-dark-blue {
+        background-color: @brand-primary;
+
+        .scroll-to-section {
+            background-color: @brand-primary;
+
+            i {
+                color: @white;
+            }
+        }
+    }
+
+    &.section-gray {
+        background-color: @gray-lighter;
+
+        .scroll-to-section {
+            background-color: @gray-lighter;
+        }
+    }
+
+    .scroll-to-section {
+        line-height: 0;
+        font-size: 0;
+        color: transparent;
+        position: absolute;
+        top: -30px;
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: @white;
+        width: 50px;
+        height: 30px;
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+        text-align: center;
+
+        &:focus {
+            text-decoration: none;
+        }
+
+        i {
+            font-size: 18px;
+            line-height: 1;
+            position: relative;
+            top: 6px;
+            color: @text-color-dark;
+            text-indent: 0 !important;
+
+        }
+    }
+
+    .row {
+        padding: 80px 0;
+        @media (max-width: @screen-sm-max) {
+            padding: 40px 0;
+        }
+
+        &.inner {
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+
+        .row {
+            padding: 10px 0;
+        }
+    }
+}

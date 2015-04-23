@@ -1,0 +1,46 @@
+.component-text {
+    &.standard {
+        padding: 0 15px;
+        @media (max-width: @screen-sm-max) {
+            padding: 0;
+        }
+    }
+
+    &[class^="center-"], &[class*=" center-"] {
+
+        h1 {
+            text-align: center;
+        }
+
+        p {
+            max-width: 800px;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: @font-size-base * 1.20;
+            line-height: @line-height * 1.20;
+            margin-bottom: @margin * 1.2;
+
+        }
+    }
+
+    &.center-light {
+        color: @white;
+        padding-bottom: 40px;
+        h1 {
+            color: @white;
+        }
+    }
+
+    &.center-dark {
+        color: @text-color-dark;
+    }
+
+    &.no-content {
+        h1 {
+            font-size: @font-size-h1 * 1.3;
+            color: @white;
+        }
+    }
+
+}
