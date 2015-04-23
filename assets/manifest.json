@@ -2,6 +2,7 @@
   "dependencies": {
     "main.js": {
       "files": [
+        "scripts/_components.out.js",
         "scripts/main.js"
       ],
       "main": true
@@ -25,6 +26,6 @@
     }
   },
   "config": {
-    "devUrl": "http://example.dev"
+    "devUrl": "http://hausrock.dev"
   }
 }

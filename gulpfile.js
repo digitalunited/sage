@@ -182,6 +182,21 @@ gulp.task('fonts', function() {
     .pipe(gulp.dest(path.dist + 'fonts'));
 });
 
+gulp.task('components-styles', function() {
+    gulp.src(['components/**/*.less'])
+        .pipe($.concat('_components.out.less'))
+        .pipe(gulp.dest(path.source + 'styles'));
+});
+
+gulp.task('components-scripts', function() {
+    gulp.src('components/**/*.coffee')
+        .pipe($.sourcemaps.init())
+        .pipe($.concat('_components.out.js'))
+        .pipe($.coffee().on('error', $.util.log))
+        .pipe($.sourcemaps.write())
+        .pipe(gulp.dest(path.source + 'scripts'));
+});
+
 // ### Images
 // `gulp images` - Run lossless compression on all the images.
 gulp.task('images', function() {
@@ -224,18 +239,24 @@ gulp.task('watch', function() {
       blacklist: ['/wp-admin/**']
     }
   });
+
   gulp.watch([path.source + 'styles/**/*'], ['styles']);
   gulp.watch([path.source + 'scripts/**/*'], ['jshint', 'scripts']);
   gulp.watch([path.source + 'fonts/**/*'], ['fonts']);
   gulp.watch([path.source + 'images/**/*'], ['images']);
   gulp.watch(['bower.json', 'assets/manifest.json'], ['build']);
+
+  $.watch('components/**/*.less', function() { gulp.start('components-styles'); });
+  $.watch('components/**/*.coffee', function() { gulp.start('components-scripts'); });
 });
 
 // ### Build
 // `gulp build` - Run all the build tasks but don't clean up beforehand.
 // Generally you should be running `gulp` instead of `gulp build`.
 gulp.task('build', function(callback) {
-  runSequence('styles',
+  runSequence('components-styles',
+              'styles',
+              'components-scripts',
               'scripts',
               ['fonts', 'images'],
               callback);
