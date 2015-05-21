@@ -5,6 +5,12 @@
     
     <?php wp_head(); ?>
     
+    <?php if (is_admin_bar_showing()) { ?>
+        <style>
+            /* put styles here to compensate for the wp-adminbar */
+        </style>
+    <?php } ?>
+    
     <style>
         .init-hide { display: none; }
     </style>
