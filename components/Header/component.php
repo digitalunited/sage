@@ -7,4 +7,14 @@ class Header extends \DigitalUnited\Components\Component
     {
         return [];
     }
+
+    protected function getWrapperElementType()
+    {
+        return 'header';
+    }
+
+    protected function getWrapperAttributes()
+    {
+        return ['role' => 'banner'];
+    }
 }

@@ -32,18 +32,6 @@ class Button extends \DigitalUnited\Components\VcComponent
                 [
                     "type" => "dropdown",
                     "holder" => "",
-                    "heading" => __("admin.text.theme", "components"),
-                    "admin_label" => false,
-                    "param_name" => "theme",
-                    "value" => [
-                        __('admin.text.standard', 'components') => 'btn-std',
-                        __('admin.text.banner', 'components') => 'btn-banner',
-                    ],
-                    "std" => 'btn-std',
-                ],
-                [
-                    "type" => "dropdown",
-                    "holder" => "",
                     "heading" => __("admin.text.position", "components"),
                     "admin_label" => false,
                     "param_name" => "position",
@@ -53,10 +41,6 @@ class Button extends \DigitalUnited\Components\VcComponent
                         __('admin.text.right', 'components') => 'pull-right',
                     ],
                     "std" => 'pull-left',
-                    'dependency' => [
-                        'element' => 'theme',
-                        'value' => 'btn-std'
-                    ]
                 ],
             ],
             "icon" => "icon-wpb-ui-button"

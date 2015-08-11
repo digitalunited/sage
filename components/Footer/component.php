@@ -8,4 +8,9 @@ class Footer extends \DigitalUnited\Components\Component
     {
         return ['' => ''];
     }
+
+    protected function getWrapperElementType()
+    {
+        return 'footer';
+    }
 }
