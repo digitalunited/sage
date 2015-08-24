@@ -12,8 +12,32 @@ body {
 
 }
 
-.component-iframe{
+.component-heading {
+
+    h1, h2, h3, h4, h5, h6 {
+        margin-top: 0;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .heading-left {
+        text-align: left;
+    }
+
+    .heading-center {
+        text-align: center;
+    }
+
+    .heading-right {
+        text-align: right;
+    }
+
+    .blue {
+        color: $brand-primary;
+    }
 }
+
+
 .component-image{
     max-width: 100%;
     margin-bottom: 15px;
@@ -26,6 +50,8 @@ body {
     {
         margin: 0;
     }
+}
+.component-iframe{
 }
 .component-post {
     .date {
@@ -245,10 +271,120 @@ body {
         }
     }
 }
+.no-header {
+  #row-0 {
+    padding-top: 10em;
+
+    @media (max-width: $screen-sm-max) {
+      padding-top: 50px;
+    }
+  }
+}
+
+section {
+  position: relative;
+
+  &.full-width {
+    padding: 5em 0;
+    width: 100%;
+    background-position: center center !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+  }
+
+  &.bg-fixed {
+    background-attachment: fixed !important;
+  }
+
+  &.background-image#row-0 {
+    min-height: 600px;
+
+    @media (max-width: $screen-xs-max) {
+      min-height: 400px;
+    }
+  }
+
+  &.no-padding-bottom {
+    padding-bottom: 0;
+  }
+
+  &.no-padding-top {
+    padding-top: 0 !important;
+  }
+
+  .container-fluid.full-width {
+    padding: 0;
+
+    .vc_row {
+      padding-bottom: 0;
+      padding-top: 0;
+    }
+
+    .col-sm-12 {
+      padding-right: 0;
+      padding-left: 0;
+    }
+  }
+
+  .container-big {
+    width: 90%;
+    margin: 0 auto;
+
+    @media (max-width: $screen-sm-max) {
+      width: 100%;
+    }
+  }
+
+  &.no-column-padding {
+    .vc_row {
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+
+      .wpb_column {
+        padding: 0 !important;
+      }
+    }
+  }
+}
 .component-searchresult {
     .search-input {
         border-right: 0;
         border-top-left-radius: 4px !important;
         border-bottom-left-radius: 4px !important;
     }
+}
+.component-video {
+    overflow: hidden;
+
+    img {
+        width: 100%;
+    }
+
+    h3 {
+        font-size: 13px;
+        line-height: 17px;
+        font-weight: bold;
+        padding: 10px 10px 8px;
+        color: black;
+        margin: 0;
+    }
+
+    a {
+        position: relative;
+    }
+
+    .play {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        background: url("play.png") top right no-repeat;
+        margin-top: -54px / 2;
+        margin-left: -54px / 2;
+        width: 54px;
+        height: 54px;
+    }
+}
+
+.fancybox-skin {
+    border-radius: 0;
 }

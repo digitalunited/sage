@@ -1,0 +1,35 @@
+.component-video {
+    overflow: hidden;
+
+    img {
+        width: 100%;
+    }
+
+    h3 {
+        font-size: 13px;
+        line-height: 17px;
+        font-weight: bold;
+        padding: 10px 10px 8px;
+        color: black;
+        margin: 0;
+    }
+
+    a {
+        position: relative;
+    }
+
+    .play {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        background: url("play.png") top right no-repeat;
+        margin-top: -54px / 2;
+        margin-left: -54px / 2;
+        width: 54px;
+        height: 54px;
+    }
+}
+
+.fancybox-skin {
+    border-radius: 0;
+}

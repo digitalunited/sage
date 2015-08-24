@@ -158,7 +158,7 @@ var jsTasks = function (filename) {
 // See https://github.com/sindresorhus/gulp-rev
 var writeToManifest = function (directory) {
     return lazypipe()
-        .pipe(gulp.dest, path.dist + directory)
+        .pipe(gulp.dest, path.dist)
         .pipe(browserSync.stream, {match: '**/*.{js,css}'})
         .pipe(rev.manifest, revManifest, {
             base: path.dist,
@@ -212,7 +212,7 @@ gulp.task('scripts', ['jshint'], function () {
 gulp.task('fonts',  ['icomoon'], function () {
     return gulp.src(globs.fonts)
         .pipe(flatten())
-        .pipe(gulp.dest(path.dist + 'fonts'))
+        .pipe(gulp.dest(path.dist))
         .pipe(browserSync.stream());
 });
 
@@ -247,7 +247,7 @@ gulp.task('images', function () {
             interlaced: true,
             svgoPlugins: [{removeUnknownsAndDefaults: false}, {cleanupIDs: false}]
         }))
-        .pipe(gulp.dest(path.dist + 'images'))
+        .pipe(gulp.dest(path.dist))
         .pipe(browserSync.stream());
 });
 
