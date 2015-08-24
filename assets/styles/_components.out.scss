@@ -1,46 +1,15 @@
 .component-button {
-    .clearfix();
+    @include clearfix;
     text-align: center;
+
     .btn {
         min-width: 100px;
     }
-    &.btn-banner .btn {
-        padding-top: 46px;
-        padding-bottom: 46px;
-        width: 100%;
-        border-radius: 0;
-        text-align: left;
-        border-bottom-width: 5px;
-        margin-bottom: 0;
+}
 
-        h2 {
-            color: @white;
-            display: inline;
-            float: left;
-            margin-bottom: 0;
+body {
+    background-color: white !important;
 
-        }
-        .icon {
-            float: right;
-            position: relative;
-
-            @media (max-width: @screen-xs-max) {
-                font-size: 36px;
-            }
-
-        }
-
-        @media (max-width: @screen-xs-max) {
-            padding: 25px 0;
-
-            h2 {
-            }
-            .icon {
-                top: 20px;
-            }
-        }
-
-    }
 }
 
 .component-iframe{
@@ -62,8 +31,9 @@
     .date {
         max-width: none;
         text-transform: lowercase;
-        font-size: @font-size-h2;
-        color: @gray-lighter;
+        font-size: $font-size-h2;
+        color: $gray-lighter;
+
     }
 
     &.list{
@@ -71,7 +41,7 @@
             max-height: 300px;
         }
 
-        @media (min-width: 550px) and (max-width: @screen-sm-max) {
+        @media (min-width: 550px) and (max-width: $screen-sm-max) {
             .btn-primary {
                 float: none !important;
             }
@@ -92,8 +62,8 @@
         }
 
         img {
-            border-radius: @border-radius-base;
-            margin-bottom: @margin;
+            border-radius: $border-radius-base;
+            margin-bottom: $margin;
         }
 
         p {
@@ -119,10 +89,11 @@
     }
 
     .navigation {
-        padding: @grid-gutter-width 0;
+        padding: $grid-gutter-width 0;
         text-align: center;
+
         .nav-wrapper {
-            padding: 0 @grid-gutter-width / 2;
+            padding: 0 $grid-gutter-width / 2;
             display: inline-block;
         }
         .btn {
@@ -134,10 +105,11 @@
 
 .component-puff {
     &.image_aside {
-        .clearfix();
+        @include clearfix;
+
         .heading {
-            color: @brand-primary-light;
-            font-size: @font-size-base * 1.2;
+            color: $brand-primary-light;
+            font-size: $font-size-base * 1.2;
             display: block;
             margin-bottom: 15px;
         }
@@ -148,16 +120,16 @@
     }
 
     &.image_under {
-        background: @gray-lighter;
+        background: $gray-lighter;
         border-radius: 5px;
         overflow: hidden;
-        margin-bottom: @margin;
+        margin-bottom: $margin;
         .heading, .text {
             padding: 25px;
         }
         .heading {
             display: block;
-            color: @brand-primary-light;
+            color: $brand-primary-light;
             font-size: 20px;
         }
 
@@ -186,7 +158,7 @@
             color: white;
             top: 0;
 
-            @media (max-width: @screen-sm-max) {
+            @media (max-width: $screen-sm-max) {
                 padding-top: 10px;
             }
         }
@@ -211,21 +183,21 @@
 
 .component-relatedlinksandfiles {
     .related {
-        background-color: @gray-lighter;
+        background-color: $gray-lighter;
 
         .heading {
-            color: @brand-primary;
+            color: $brand-primary;
         }
 
         i {
             font-size: 24px;
-            color: @brand-primary;
+            color: $brand-primary;
             margin-right: 10px;
         }
 
         hr {
             margin: 0;
-            border-color: @gray-light;
+            border-color: $gray-light;
 
         }
 
@@ -240,10 +212,10 @@
                 display: block;
                 width: auto;
                 margin-bottom: 20px;
-                color: @brand-primary-light;
+                color: $brand-primary-light;
 
                 &:hover {
-                    color: darken(@brand-primary-light, 10%);
+                    color: darken($brand-primary-light, 10%);
                 }
 
                 &:last-child {
@@ -267,7 +239,7 @@
 
                 .file-size {
                     font-size: 14px;
-                    color: @gray-dark;
+                    color: $gray-dark;
                 }
             }
         }

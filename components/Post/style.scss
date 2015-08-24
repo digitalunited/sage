@@ -2,8 +2,9 @@
     .date {
         max-width: none;
         text-transform: lowercase;
-        font-size: @font-size-h2;
-        color: @gray-lighter;
+        font-size: $font-size-h2;
+        color: $gray-lighter;
+
     }
 
     &.list{
@@ -11,7 +12,7 @@
             max-height: 300px;
         }
 
-        @media (min-width: 550px) and (max-width: @screen-sm-max) {
+        @media (min-width: 550px) and (max-width: $screen-sm-max) {
             .btn-primary {
                 float: none !important;
             }
@@ -32,8 +33,8 @@
         }
 
         img {
-            border-radius: @border-radius-base;
-            margin-bottom: @margin;
+            border-radius: $border-radius-base;
+            margin-bottom: $margin;
         }
 
         p {

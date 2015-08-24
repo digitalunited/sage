@@ -8,10 +8,11 @@
     }
 
     .navigation {
-        padding: @grid-gutter-width 0;
+        padding: $grid-gutter-width 0;
         text-align: center;
+
         .nav-wrapper {
-            padding: 0 @grid-gutter-width / 2;
+            padding: 0 $grid-gutter-width / 2;
             display: inline-block;
         }
         .btn {

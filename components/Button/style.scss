@@ -1,0 +1,13 @@
+.component-button {
+    @include clearfix;
+    text-align: center;
+
+    .btn {
+        min-width: 100px;
+    }
+}
+
+body {
+    background-color: white !important;
+
+}

@@ -1,9 +1,10 @@
 .component-puff {
     &.image_aside {
-        .clearfix();
+        @include clearfix;
+
         .heading {
-            color: @brand-primary-light;
-            font-size: @font-size-base * 1.2;
+            color: $brand-primary-light;
+            font-size: $font-size-base * 1.2;
             display: block;
             margin-bottom: 15px;
         }
@@ -14,16 +15,16 @@
     }
 
     &.image_under {
-        background: @gray-lighter;
+        background: $gray-lighter;
         border-radius: 5px;
         overflow: hidden;
-        margin-bottom: @margin;
+        margin-bottom: $margin;
         .heading, .text {
             padding: 25px;
         }
         .heading {
             display: block;
-            color: @brand-primary-light;
+            color: $brand-primary-light;
             font-size: 20px;
         }
 
@@ -52,7 +53,7 @@
             color: white;
             top: 0;
 
-            @media (max-width: @screen-sm-max) {
+            @media (max-width: $screen-sm-max) {
                 padding-top: 10px;
             }
         }

@@ -217,8 +217,8 @@ gulp.task('fonts',  ['icomoon'], function () {
 });
 
 gulp.task('components-styles', function () {
-    gulp.src(['components/**/*.less'])
-        .pipe(concat('_components.out.less'))
+    gulp.src(['components/**/*.scss'])
+        .pipe(concat('_components.out.scss'))
         .pipe(gulp.dest(path.source + 'styles'));
 });
 
@@ -287,10 +287,10 @@ gulp.task('watch', function () {
     gulp.watch([path.source + 'images/**/*'], ['images']);
     gulp.watch(['bower.json', 'assets/manifest.json'], ['build']);
 
-    $.watch('components/**/*.less', function () {
+    gulp.watch('components/**/*.scss', function () {
         gulp.start('components-styles');
     });
-    $.watch('components/**/*.coffee', function () {
+    gulp.watch('components/**/*.coffee', function () {
         gulp.start('components-scripts');
     });
 });
