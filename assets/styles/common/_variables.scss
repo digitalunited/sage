@@ -1,14 +1,45 @@
-// Glyphicons font path
-$icon-font-path:        "../fonts/";
-
 // Grid settings
 $main-sm-columns:       12;
 $sidebar-sm-columns:    4;
+$grid-gutter-width: 30px;
+$container-large-desktop: (1170px + $grid-gutter-width);
 
 // Colors
-$brand-primary:         #27ae60;
-$brand-primary-light:   #27ae60;
+$brand-primary:         #314347;
+$brand-primary-light:   #75848b;
 $brand-primary-dark:    #27ae60;
+$brand-accent-red:      #ea5f4a;
+$brand-accent-blue:     #5f9ad2;
+$brand-accent-green:    #b5d37d;
+$white:                 #ffffff;
+$gray:                  #f2f2f2;
+$gray-dark:             #dfdfdf;
+$gray-darker:           #a3a3a3;
+$link-color:            $brand-accent-blue;
+
+// Borders
+$border-radius-base: 3px;
 
 // Margins
-$margin: 25px;
+$margin: 20px;
+$margin-bottom: 30px;
+$gap: 30px;
+
+// Typography
+$font-family-base: "";
+$headings-font-weight: 300;
+$font-weight-base: 300;
+$font-weight-medium: 400;
+$text-color: $brand-primary-light;
+$link-hover-decoration: none;
+$headings-color: $brand-primary;
+$font-size-base: 16px;
+$line-height-normal: 26px;
+
+// Icons
+$icon-font-size-big:        62px;
+
+// Z-index positions
+$tab-bar-zindex: 500;
+$banner-zindex: 1000;
+$nav-more-zindex: 600;
