@@ -234,7 +234,7 @@ gulp.task('components-scripts', function () {
 gulp.task('icomoon', function () {
     gulp.src(path.source + 'fonts/icomoon/style.css')
         .pipe(replace('fonts/icomoon', 'icomoon'))
-        .pipe(rename('_icomoon.less'))
+        .pipe(rename('_icomoon.scss'))
         .pipe(gulp.dest(path.source + 'styles'));
 });
 
@@ -264,7 +264,7 @@ gulp.task('jshint', function () {
 
 // ### Clean
 // `gulp clean` - Deletes the build folder entirely.
-gulp.task('clean', require('del').bind(null, [path.dist]));
+gulp.task('clean', require('del').bind(null, [path.dist, path.source + 'fonts/icomoon/Read Me.txt', path.source + 'fonts/icomoon/demo.html', path.source + 'fonts/icomoon/demo-files']));
 
 // ### Watch
 // `gulp watch` - Use BrowserSync to proxy your dev server and synchronize code

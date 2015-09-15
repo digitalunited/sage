@@ -37,3 +37,11 @@ function remove_dashboard_meta() {
     remove_meta_box( 'dashboard_activity', 'dashboard', 'normal');
 }
 add_action( 'admin_init', 'remove_dashboard_meta' );
+
+function remove_tags()
+{
+    remove_meta_box('tagsdiv-post_tag', 'post', 'normal'); // Tags Metabox
+    remove_submenu_page('edit.php', 'edit-tags.php?taxonomy=post_tag'); // Tags
+}
+
+add_action('admin_menu', 'remove_tags');

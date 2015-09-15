@@ -17,21 +17,16 @@ use Roots\Sage\Wrapper;
       do_action('get_header');
       echo (new \Component\Header())->render();
     ?>
-    <div class="wrap container" role="document">
-      <div class="content row">
-        <main class="main" role="main">
-          <?php include Wrapper\template_path(); ?>
-        </main><!-- /.main -->
-        <?php if (Config\display_sidebar()) : ?>
-          <aside class="sidebar" role="complementary">
-            <?php include Wrapper\sidebar_path(); ?>
-          </aside><!-- /.sidebar -->
-        <?php endif; ?>
-      </div><!-- /.content -->
+    <div class="wrap" role="document">
+        <div class="content">
+            <main class="main" role="main">
+                <?php include Wrapper\template_path(); ?>
+            </main><!-- /.main -->
+        </div><!-- /.content -->
     </div><!-- /.wrap -->
     <?php
-      echo (new \Component\Footer())->render();
-      wp_footer();
+    echo (new \Component\Footer())->render();
+    wp_footer();
     ?>
   </body>
 </html>
