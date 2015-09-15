@@ -54,6 +54,10 @@ class SageWrapping {
     self::$main_template = $main;
     self::$base = basename(self::$main_template, '.php');
 
+    if (self::$base === 'attachment') {
+      return $main;
+    }
+
     if (self::$base === 'index') {
       self::$base = false;
     }
