@@ -216,6 +216,19 @@ gulp.task('fonts',  ['icomoon'], function () {
         .pipe(browserSync.stream());
 });
 
+gulp.task('components-assets', function () {
+    gulp.src(['components/**/assets/*.{png,gif,jpg}'])
+        .pipe(imagemin({
+            progressive: true,
+            interlaced: true,
+            svgoPlugins: [{removeUnknownsAndDefaults: false}]
+        }))
+        .pipe(rename(function (path) {
+            path.dirname = path.dirname.replace(/\/assets/, '');
+        }))
+        .pipe(gulp.dest(path.dist));
+});
+
 gulp.task('components-styles', function () {
     gulp.src(['components/**/*.scss'])
         .pipe(concat('_components.out.scss'))
@@ -290,6 +303,9 @@ gulp.task('watch', function () {
     gulp.watch('components/**/*.scss', function () {
         gulp.start('components-styles');
     });
+    gulp.watch('components/**/assets/*', function () {
+        gulp.start('components-assets');
+    });
     gulp.watch('components/**/*.coffee', function () {
         gulp.start('components-scripts');
     });
@@ -301,6 +317,7 @@ gulp.task('watch', function () {
 gulp.task('build', function (callback) {
     runSequence(
         'icomoon',
+        'components-assets',
         'components-styles',
         'styles',
         'components-scripts',
