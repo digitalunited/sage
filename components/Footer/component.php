@@ -13,4 +13,9 @@ class Footer extends \DigitalUnited\Components\Component
     {
         return 'footer';
     }
+
+    protected function getWrapperAttributes()
+    {
+        return ['role' => 'content-info'];
+    }
 }

@@ -48,10 +48,10 @@ class PostList extends \DigitalUnited\Components\Component
 
         return new Button([
             'link' => $link,
+            'text' => __('post.list.load.more.button', 'components'),
         ]);
 
     }
-
 
     private function extractHrefFromDomElement($domElement)
     {

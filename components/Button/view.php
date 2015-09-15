@@ -1,1 +1,1 @@
-<a href="<?= $link->url ?>" class="btn btn-primary <?= $position ?>" title="<?= $link->title ?>" target="<?= $link->target ?>" role="button"><?= $text ?></a>
+<a href="<?= $link->url ?>" class="btn <?= $color ?>" title="<?= $link->title ?>" target="<?= $link->target ?>" role="button"><?= $text ?></a>

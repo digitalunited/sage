@@ -23,3 +23,6 @@ $('.next a').click ->
             $nextButton.fadeIn 'fast'
 
     return false
+
+appendPosts = ($nextPosts) ->
+

@@ -11,20 +11,21 @@ class Heading extends \DigitalUnited\Components\VcComponent
     {
         return [
             'name' => __('component.name.heading', 'components'),
+            'icon' => 'icon-wpb-ui-custom_heading',
+            'admin_enqueue_css' => get_stylesheet_directory_uri() . '/dist/vc_backend.css',
             'params' => [
                 [
                     "type" => "textfield",
                     "admin_label" => true,
                     "heading" => __("admin.text.heading.text", "components"),
                     "param_name" => "heading",
-                    "value" => "",
+                    "value" => "Rubrik här",
                 ],
                 [
                     "type" => "dropdown",
-                    "holder" => "",
-                    "heading" => __("admin.text.heading.size", "components"),
-                    "admin_label" => true,
-                    "param_name" => "size",
+                    "heading" => __("admin.text.heading.tag", "components"),
+                    "admin_label" => false,
+                    "param_name" => "tag",
                     "value" => [
                         1 => 'h1',
                         2 => 'h2',
@@ -33,21 +34,28 @@ class Heading extends \DigitalUnited\Components\VcComponent
                         5 => 'h5',
                         6 => 'h6',
                     ],
-                    "std" => 'h1',
-                ],
-                [
-                    "type" => "textfield",
-                    "admin_label" => true,
-                    "heading" => __("admin.text.lead.width", "components"),
-                    "param_name" => "width",
-                    "value" => "",
+                    "std" => 'h2',
                 ],
                 [
                     "type" => "dropdown",
-                    "holder" => "",
+                    "heading" => __("admin.text.size", "components"),
+                    "admin_label" => false,
+                    "param_name" => "size",
+                    "value" => [
+                        __('admin.text.size.h1', 'components') => 'heading-1',
+                        __('admin.text.size.h2', 'components') => 'heading-2',
+                        __('admin.text.size.h3', 'components') => 'heading-3',
+                        __('admin.text.size.h4', 'components') => 'heading-4',
+                        __('admin.text.size.h5', 'components') => 'heading-5',
+                        __('admin.text.size.h6', 'components') => 'heading-6',
+                    ],
+                    "std" => 'heading-2',
+                ],
+                [
+                    "type" => "dropdown",
                     "heading" => __("admin.text.heading.align", "components"),
                     "admin_label" => true,
-                    "param_name" => "align",
+                    "param_name" => "theme",
                     "value" => [
                         __('admin.text.align.left', 'components') => 'heading-left',
                         __('admin.text.align.center', 'components') => 'heading-center',
@@ -56,12 +64,32 @@ class Heading extends \DigitalUnited\Components\VcComponent
                     "std" => 'heading-center',
                 ],
                 [
-                    "type" => "colorpicker",
-                    "heading" => __("admin.text.text.color", "components"),
-                    "param_name" => "text_color",
+                    "type" => "dropdown",
+                    "heading" => __("admin.text.color", "components"),
+                    "admin_label" => true,
+                    "param_name" => "color",
+                    "value" => [
+                        __('admin.text.color.brand', 'components') => 'color--brand',
+                        __('admin.text.color.brand.light', 'components') => 'color--brand-light',
+                        __('admin.text.color.white', 'components') => 'color--white',
+                    ],
+                    "std" => 'color--brand',
+                ],
+                [
+                    "type" => "vc_link",
+                    "admin_label" => false,
+                    "heading" => __("admin.text.link", "components"),
+                    "param_name" => "link",
+                    "value" => "",
+                    "description" => __("admin.text.field.may.be.blank", "components"),
                 ],
             ],
-            "icon" => "icon-wpb-ui-custom_heading",
         ];
+    }
+
+    protected function SanetizeDataForRendering($data)
+    {
+        $data['link'] = new \DigitalUnited\Components\Link($data['link']);
+        return $data;
     }
 }

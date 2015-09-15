@@ -1,13 +1,21 @@
 .component-button {
-    @include clearfix;
+  @include clearfix;
+  margin-bottom: $margin;
+
+  a {
+    margin-bottom: 0;
+  }
+
+  &.align-left {
+    text-align: left;
+  }
+
+  &.align-center {
     text-align: center;
+  }
 
-    .btn {
-        min-width: 100px;
-    }
-}
-
-body {
-    background-color: white !important;
+  &.align-right {
+    text-align: right;
+  }
 
 }

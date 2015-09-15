@@ -7,9 +7,6 @@ class Post extends \DigitalUnited\Components\Component
 
     protected function getDefaultParams()
     {
-        /**
-         * @todo the 'view' param should be updated to "theme" instead, would removes some logic from this file.
-         */
         return [
             'post' => false,
             'view' => 'list',
@@ -17,15 +14,10 @@ class Post extends \DigitalUnited\Components\Component
         ];
     }
 
-    protected function getViewFileName()
-    {
-        $viewFile = $this->param('view') . '.view.php';
-        return $viewFile;
-    }
-
     protected function sanetizeDataForRendering($data)
     {
         $data['image'] = $this->getImage();
+        $data['srcset'] = $this->getImageSrcset();
         return $data;
     }
 
@@ -44,6 +36,16 @@ class Post extends \DigitalUnited\Components\Component
     public function getPostDate()
     {
         return get_the_date(get_option('date_format'), $this->param('post')->ID);
+    }
+
+    public function getPostCategories()
+    {
+        $post = $this->param('post');
+        $terms = $post->post_type == 'post'
+            ? get_the_category($post->ID)
+            : get_the_terms($post->ID, $post->post_type.'-category');
+
+        return $terms && !isset($terms->errors) ? $terms : [];
     }
 
     public function getExcerpt()
@@ -71,8 +73,13 @@ class Post extends \DigitalUnited\Components\Component
 
     public function getPostTypeArchiveLink()
     {
+        $post_type = $this->param('post')->post_type;
+        $url = $post_type == 'post'
+            ?  get_permalink(get_option('page_for_posts'))
+            : get_post_type_archive_link($post_type);
+
         return new \DigitalUnited\Components\Link([
-            'url' => get_permalink(get_option('page_for_posts')),
+            'url' => $url,
             'title' => $this->getHeadline(),
         ]);
     }
@@ -94,7 +101,45 @@ class Post extends \DigitalUnited\Components\Component
             : '';
     }
 
-    protected function getExtraWrapperDivClasses()
+    private function getImageSrcset()
+    {
+        $image_id = $this->getMeta('_thumbnail_id');
+        $srcset =  $image_id ? \DigitalUnited\ResponsiveImage::render([
+            'imgId' => $image_id,
+            'output' => 'srcset',
+        ]) : '';
+
+
+        return $srcset;
+    }
+
+    public function getNextPostLink()
+    {
+        global $wpdb;
+        $post = $this->param('post');
+        $id = $wpdb->get_var("
+            select ID from {$wpdb->posts}
+            where post_date > '{$post->post_date}' and post_type = '{$post->post_type}'
+                and post_status='publish'
+            order by post_date asc limit 1");
+
+        return $id ? get_permalink($id) : false;
+    }
+
+    public function getPrevPostLink()
+    {
+        global $wpdb;
+        $post = $this->param('post');
+        $id = $wpdb->get_var("
+            select ID from {$wpdb->posts}
+            where post_date < '{$post->post_date}' and post_type = '{$post->post_type}'
+                and post_status='publish'
+            order by post_date desc limit 1");
+
+        return $id ? get_permalink($id) : false;
+    }
+
+    protected function getExtraWrapperClasses()
     {
         return [$this->param('view')];
     }

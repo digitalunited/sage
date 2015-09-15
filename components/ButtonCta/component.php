@@ -1,7 +1,7 @@
 <?php
 namespace Component;
 
-class Button extends \DigitalUnited\Components\VcComponent
+class ButtonCta extends \DigitalUnited\Components\VcComponent
 {
     /*
      * Vc mapping array
@@ -10,7 +10,7 @@ class Button extends \DigitalUnited\Components\VcComponent
     protected function getComponentConfig()
     {
         return [
-            'name' => __('component.name.button', 'components'),
+            'name' => __('component.name.cta.button', 'components'),
             'category' => __( 'component.category.buttons', 'components' ),
             'params' => [
                 [
@@ -23,6 +23,7 @@ class Button extends \DigitalUnited\Components\VcComponent
                 [
                     "type" => "vc_link",
                     "admin_label" => false,
+                    "class" => "",
                     "heading" => __("admin.text.link", "components"),
                     "param_name" => "link",
                     "value" => "",
@@ -52,7 +53,7 @@ class Button extends \DigitalUnited\Components\VcComponent
                     "std" => 'btn--blue',
                 ],
             ],
-            "icon" => "icon-wpb-ui-button"
+            "icon" => "icon-wpb-call-to-action"
         ];
     }
 
@@ -62,5 +63,10 @@ class Button extends \DigitalUnited\Components\VcComponent
         $data['text'] = $data['text'] ? $data['text'] : $link->title;
         $data['link'] = new \DigitalUnited\Components\Link($data['link']);
         return $data;
+    }
+
+    protected function getExtraWrapperClasses()
+    {
+        return ['component-button'];
     }
 }

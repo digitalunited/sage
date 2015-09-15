@@ -1,23 +1,22 @@
-<div class="row">
-<?php
-    if ($image) {
-    ?>
-        <div class="col-md-5 col-xs-12 pull-right">
-            <?= $image ?>
+<?php if ($image) { ?>
+    <a href="<?= get_permalink() ?>">
+        <div class="component-post--list__image du-resp-div-bg lazyload cover" data-bgset="<?= $srcset ?>">
         </div>
-    <?php
-    }
-    ?>
+    </a>
+<?php } ?>
 
-    <div class="col-md-<?= $image ? '7' : '12' ?> col-xs-12">
-        <h2><?= $component->getHeadline() ?></h2>
-        <?= $component->shouldDisplayDate()
-            ? '<p class="date">'.$component->getPostDate().'</p>'
-            : ''; ?>
-        <?= wpautop($component->getExcerpt()) ?>
-        <?= new \Component\Button([
-            'text' => __('post.listview.button.readmore', 'components'),
-            'link' => $component->getLink()
-        ]); ?>
+<div class="component-post--list__body <?= $image ? '' : 'full' ?>">
+    <div class="meta">
+        <?php foreach ($component->getPostCategories() as $category) {
+            echo '<span class="category"><a href="' . get_term_link($category) . '">' . $category->name . '</a></span>';
+        } ?>
+        <span class="author"><?= __('By', 'sage'); ?> Author here</span>
+        <time class="date" datetime="<?= get_post_time('c', true); ?>">
+            <?= $component->getPostDate() ?>
+        </time>
     </div>
+
+    <a href="<?= get_permalink() ?>" class="title-link"><h2><?= $component->getHeadline() ?></h2></a>
+    <p><?= $component->getExcerpt() ?></p>
+    <a href="<?= get_permalink() ?>" class="read-more"><i class="icon icon-round-arrow-right"></i></a>
 </div>

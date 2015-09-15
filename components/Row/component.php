@@ -6,7 +6,7 @@ namespace Component;
 
 class Row extends \DigitalUnited\Components\Component
 {
-    static protected $rowNumber = 0;
+    static protected $sectionNumber = 1;
 
     protected function getDefaultParams()
     {
@@ -41,7 +41,7 @@ class Row extends \DigitalUnited\Components\Component
 
     private function getRowId()
     {
-        return 'row-' . self::$rowNumber++;
+        return 'section-' . self::$sectionNumber++;
     }
 
     public function main()
@@ -54,6 +54,8 @@ class Row extends \DigitalUnited\Components\Component
     {
         \vc_map_update('vc_row', [
             'name' => __('component.name.row', 'components'),
+            "description" => __("admin.row.desc", "components"),
+            'category' => __( 'component.category.content', 'components' ),
             'params' => [
                 [
                     'type' => 'attach_image',
@@ -106,7 +108,6 @@ class Row extends \DigitalUnited\Components\Component
                     "std" => 'container',
                 ],
             ],
-            "description" => __("admin.row.desc", "components")
         ]);
 
         \vc_map_update('vc_row_inner', [

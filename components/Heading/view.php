@@ -1,3 +1,11 @@
-<<?= $size ?> class="<?= $align ?>" style="<?= $text_color ? "color: {$text_color};" : '' ?><?= $width ? "max-width: {$width};" : '' ?>">
+<?php if ($link->url) { ?>
+   <a href="<?= $link->url ?>" title="<?= $link->title ?>" target="<?= $link->target ?>">
+<?php } ?>
+
+<<?= $tag ?> class="<?= $size ?> <?= $color ?>">
     <?= $heading ?>
-</<?= $size ?>>
+</<?= $tag ?>>
+
+<?php if ($link->url) { ?>
+    </a>
+<?php } ?>
